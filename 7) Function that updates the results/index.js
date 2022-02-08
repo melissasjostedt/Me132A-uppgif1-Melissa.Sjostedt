@@ -67,6 +67,43 @@ function getArrayOfSelectedNumbers (className) {
 }
 
 
+
+
+function gridMaker (gridContainer, R, C) {
+  gridContainer.style.display="grid";
+  gridContainer.style.gridTemplateRows = repeat(${R}, 1fr);
+  gridContainer.style.gridTemplateColumns =`repeat(${C}, 1fr)`;
+ 
+ for (let i = 0; i < (R * C); i++){
+ gridContainer.appendChild( createNumberDiv() ); 
+ 
+  }  
+ 
+}
+
+function buttonGridmaker (){
+   gridMaker ( document.querySelector("#grid"),(document.querySelector("#inputRows").value) ,(document.querySelector("#inputCols").value) );
+}
+ 
+document.querySelector("button").addEventListener("click", buttonGridmaker );
+
+function createNumberDiv (){
+  let elementRef = document.createElement ("div");
+  elementRef.innerHTML = Math.floor(100 * Math.random());
+   
+  elementRef.addEventListener("click", function(){
+    elementRef.classList.toggle("selected"); 
+  });
+  return elementRef;
+}
+
+function updateResults(className){
+
+  getArrayOfSelectedNumbers(className);
+}; 
+
+
+
 /*
 
 For this part, we need an array with all the selected numbers.
@@ -116,38 +153,43 @@ VIDEO:  Record a video where you explain what happens on these lines:
         This video must be called joinExplanation.
 
 
-
-
-
 AMOUNT
 This simply states the number of currently selected numbers.
 Since we have them in an array, it's easy to get their amount... do you
 remember how can we know how many elements an array has? Check it out in previous lectures or exercises.
 
 
-
-
 SUM
 At the beginning of the exercise, we coded a function that
 takes an array as argument and returns the sum of its elements (if they are numbers).
 This is the time to use it!
+*/
+function adder ( _array ) {
+  let sum = 0;
+  for (let i = 0; i < _array.length; i++) { 
+    sum = sum + _array[i];
+  }
+  return sum;
+}
 
-
-
-
+/*
 AVERAGE
 At the beginning of the exercise, we coded a function that
 takes an array as argument and returns the average of its elements (if they are numbers).
 This is the time to use it!
 Note that the average is often a number with a lot of decimals. Use the function roundString
-below to always show a number that has one decimal.
+below to always show a number that has one decimal.*/
 
 
-*/
+function averg ( _array ) {
+  // in here you must use adder
+  return roundString(adder(_array)/ _array.length, 1); 
+
+}
+
 
 function roundString(numberWithManyDecimals, decimals){
   // From: https://stackoverflow.com/a/12698296/2027283
   var rounded = Math.pow(10, decimals);
   return (Math.round(numberWithManyDecimals * rounded) / rounded).toFixed(decimals);
 }
-
