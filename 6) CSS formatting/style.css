@@ -1,0 +1,53 @@
+body{
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+#top{
+    margin: 0;
+    display: grid;
+
+}
+#controls{
+    display: flex;
+}
+
+
+#inputRows{
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+    border-radius: 5%;
+    padding: 10px;
+
+}
+
+#inputCols{
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5%;
+    margin-left: 15px;
+    box-sizing: border-box;
+}
+
+button{
+    color: purple;
+    padding: 10px;
+    margin-left: 10px;
+    margin-top: 10px;
+    
+}
+
+div > button:hover{
+    background-color: orange;
+}
+
+#results{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 5px;
+
+}

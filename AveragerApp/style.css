@@ -1,0 +1,102 @@
+body{
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+    font-family: Helvetica;
+    font-size: 20px;
+    background-color: grey;
+    
+}
+
+#top > div{
+    width: 60vh;
+    display: flex;
+    flex-basis: 6vh;
+    margin: 2vh;
+    justify-content: center;
+
+}
+#top > div > div{
+    margin: 0px 2vh;
+}
+#results span{
+    font-weight: bolder;
+}
+
+#grid{
+    display: grid;
+    margin:2vh;
+    padding: 1vh;
+    flex-grow: 1;
+    gap: 1vh;
+    font-size: 3vh;
+    border: 1px solid grey;
+    font: 25px 'supermercado One';
+    width: 100vh;
+    height: 100vh;
+}
+
+#grid > div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    color: orange;
+    font-size: 25px;
+    font-family: 'Roberto';
+    
+}
+
+#grid > div.selected{
+  background-color: purple;
+  color: orange;
+
+}
+#grid > div:hover{
+    cursor: pointer;
+    box-shadow: 0 0 10px black;
+    
+}
+
+
+#inputRows{
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+    border-radius: 5%;
+    padding: 10px;
+
+}
+
+#inputCols{
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 5%;
+    margin-left: 15px;
+    box-sizing: border-box;
+}
+
+button{
+    color: orange;
+    padding: 10px;
+    margin-left: 20px;
+    margin-top: 15px;
+    background-color: white;
+    
+}
+
+div > button:hover{
+    background-color: purple;
+    
+}
+
+
+#results{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 5px;
+
+}
